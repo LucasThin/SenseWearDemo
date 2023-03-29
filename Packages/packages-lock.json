@@ -1,22 +1,11 @@
 {
   "dependencies": {
-    "com.meta.movement": {
-      "version": "file:C:/Users/lucas/Downloads/Unity-Movement-main/Unity-Movement-main",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.textmeshpro": "3.0.6"
-      }
-    },
-    "com.simonoliver.unityfigma": {
-      "version": "https://github.com/simonoliver/UnityFigmaBridge.git",
+    "com.coffee.softmask-for-ugui": {
+      "version": "https://github.com/mob-sakai/SoftMaskForUGUI.git",
       "depth": 0,
       "source": "git",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.1-preview.1",
-        "com.unity.textmeshpro": "2.0.1"
-      },
-      "hash": "2761c06143c544aa88e9ce649e9109d883e04713"
+      "dependencies": {},
+      "hash": "b870d64b5704a764fd03aaccb11f2dbe652b1756"
     },
     "com.unity.burst": {
       "version": "1.7.3",
@@ -86,7 +75,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
