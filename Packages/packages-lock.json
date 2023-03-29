@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.meta.movement": {
+      "version": "file:C:/Users/lucas/Downloads/Unity-Movement-main/Unity-Movement-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.textmeshpro": "3.0.6"
+      }
+    },
     "com.simonoliver.unityfigma": {
       "version": "https://github.com/simonoliver/UnityFigmaBridge.git",
       "depth": 0,
