@@ -17,10 +17,12 @@ public class Vocals : MonoBehaviour
         source = gameObject.AddComponent<AudioSource>();
     }
 
-    public void StartConversation(AudioClip clip)
+    public void StartConversation(AudioObject clip)
     {
         if (source.isPlaying) source.Stop();
 
-        source.PlayOneShot(clip);
+        source.PlayOneShot(clip.clip);
+        
+        Subtitles.instance.SetSubtitle(clip.subtitle, clip.clip.length);
     }
 }

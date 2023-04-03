@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TriggerAudio : MonoBehaviour
 {
-    public AudioClip clipToPlay;
+    public AudioObject clipToPlay;
 
     private void OnTriggerEnter(Collider other)
     {
