@@ -2906,7 +2906,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34f8ebea424df54e928f442411f94a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipToPlay: {fileID: 11400000, guid: 629203a0f6450004d95b26795a2e1626, type: 2}
+  clipsToPlay:
+  - {fileID: 11400000, guid: 629203a0f6450004d95b26795a2e1626, type: 2}
+  - {fileID: 11400000, guid: 438d2611ac3483e4c82fee6caf5577a1, type: 2}
+  - {fileID: 11400000, guid: 66005860417660944b8e809e6acaf2f3, type: 2}
+  - {fileID: 11400000, guid: 7e348706039c13444bfeec8f3ea57b85, type: 2}
 --- !u!4 &1587988792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112,

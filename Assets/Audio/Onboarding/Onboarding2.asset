@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06cc52538f34d6b43a351ce43c9f0600, type: 3}
+  m_Name: Onboarding2
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 6deef51ff16a137459d5c31128e49033, type: 3}
+  subtitle: As your guide, I'll make sure we get everything done efficiently and
+    safely.

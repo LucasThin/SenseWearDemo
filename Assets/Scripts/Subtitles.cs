@@ -13,7 +13,7 @@ public class Subtitles : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        ClearSubtitle();
+        ClearSubtitle(); 
     }
 
     public void SetSubtitle(string subtitle, float delay)

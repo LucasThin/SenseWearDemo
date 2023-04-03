@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class TriggerAudio : MonoBehaviour
 {
-    public AudioObject clipToPlay;
+    public List<AudioObject> clipsToPlay = new List<AudioObject>();
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Vocals.instance.StartConversation(clipToPlay);
+            Vocals.instance.StartConversation(clipsToPlay);
         }
     }
 }
