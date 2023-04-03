@@ -137,6 +137,7 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_BURST_1_0_0_OR_NEWER
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
+--compilation-defines=UNIVERSAL_1_0_0_OR_NEWER
 --compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
 --compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
 --compilation-defines=MODULE_AI_EXISTS
@@ -162,7 +163,6 @@ Library: lib_burst_generated
 --compilation-defines=INCLUDE_LEGACY_INPUT_HELPERS
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=UNITY_ANALYTICS
---compilation-defines=UNIVERSAL_1_0_0_OR_NEWER
 --generate-link-xml=Temp\burst.link.xml
 --output=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
@@ -174,6 +174,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Oculus.Interaction.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
+--root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.Postprocessing.Runtime.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.XR.Oculus.dll
@@ -228,7 +229,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.Recorder.Base.dll
 --root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll
---root-assembly=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\Unity.Postprocessing.Runtime.dll
 --assembly-folder=C:\Users\lucas\Documents\Unity\SenseWearDemo\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ReorderJob`1[[UnityEngine.Rendering.Universal.LightMinMaxZ, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--e943843acfb78f5f2f3716a6553740d9
