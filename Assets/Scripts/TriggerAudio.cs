@@ -7,11 +7,8 @@ public class TriggerAudio : MonoBehaviour
 {
     public List<AudioObject> clipsToPlay = new List<AudioObject>();
 
-    private void OnTriggerEnter(Collider other)
+    public void PlayAudio()
     {
-        if (other.CompareTag("Player"))
-        {
-            Vocals.instance.StartConversation(clipsToPlay);
-        }
+        Vocals.instance.StartConversation(clipsToPlay);
     }
 }

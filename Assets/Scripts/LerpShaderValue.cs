@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class LerpShaderValue : MonoBehaviour
 {
-    public Material targetMaterial;
-    public string propertyName = "_YourShaderProperty";
-    public float startValue = -0.8f;
-    public float endValue = 0.6f;
-    public float lerpDuration = 1f;
+    [SerializeField] Material targetMaterial;
+    [SerializeField] string propertyName = "_YourShaderProperty";
+    [SerializeField] float startValue = -0.8f;
+    [SerializeField] float endValue = 0.6f;
+    [SerializeField] float lerpDuration = 1f;
+    [SerializeField] private Subtitles _switchSubtitles;
+    [SerializeField] TriggerAudio _triggerAudio;
     private float lerpStartTime;
     private bool isLerping = false;
+    
     
     private void Start()
     {
@@ -42,7 +45,8 @@ public class LerpShaderValue : MonoBehaviour
 
             if (!isLerping)
             {
-                Debug.Log("Lerp completed");
+                //Debug.Log("Lerp completed");
+               _triggerAudio.PlayAudio();
             }
         }
     }
