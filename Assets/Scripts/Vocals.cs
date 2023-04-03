@@ -7,6 +7,7 @@ public class Vocals : MonoBehaviour
 {
     private AudioSource source;
     public static Vocals instance;
+    public event Action AllClipsPlayed;
     private void Awake()
     {
         instance = this;
@@ -41,5 +42,7 @@ public class Vocals : MonoBehaviour
             // Wait for the duration of the audio clip before moving on to the next one
             yield return new WaitForSeconds(audioObject.clip.length);
         }
+        
+        AllClipsPlayed?.Invoke();
     }
 }
