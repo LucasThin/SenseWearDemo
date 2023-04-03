@@ -8,7 +8,7 @@ public class LerpShaderValue : MonoBehaviour
     [SerializeField] float endValue = 0.6f;
     [SerializeField] float lerpDuration = 1f;
     [SerializeField] private Subtitles _switchSubtitles;
-    [SerializeField] TriggerAudio _triggerAudio;
+    [SerializeField] GameObject _PlayThisSceneAfter;
     private float lerpStartTime;
     private bool isLerping = false;
     
@@ -46,7 +46,7 @@ public class LerpShaderValue : MonoBehaviour
             if (!isLerping)
             {
                 //Debug.Log("Lerp completed");
-               _triggerAudio.PlayAudio();
+               _PlayThisSceneAfter.SetActive(true);
             }
         }
     }

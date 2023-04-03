@@ -11,6 +11,7 @@ public class TriggerAudio : MonoBehaviour
     private void Start()
     {
         Vocals.instance.AllClipsPlayed += OnAllClipsPlayed;
+        PlayAudio();
     }
     
     private void OnDestroy()
