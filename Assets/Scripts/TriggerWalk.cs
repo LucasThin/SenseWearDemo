@@ -4,24 +4,29 @@ using Oculus;
 
 public class TriggerWalk : MonoBehaviour
 {
-    private Animator playerAnimator; // Reference to the Animator component
+    private Animator playerAnimator;
     private MoveCharacter moveCharacter;
 
     private bool canWalk = true;
+    private bool isOvrManagerInTrigger = false;
+    private bool isObstacleInTrigger = false;
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
         moveCharacter = GetComponent<MoveCharacter>();
         moveCharacter.OnReachedEnd += OnReachedEnd;
+        moveCharacter.OnPaused += OnPaused;
+        moveCharacter.OnResumed += OnResumed;
     }
 
     private void OnDestroy()
     {
-        // Unsubscribe from the event when the object is destroyed
         if (moveCharacter != null)
         {
             moveCharacter.OnReachedEnd -= OnReachedEnd;
+            moveCharacter.OnPaused -= OnPaused;
+            moveCharacter.OnResumed -= OnResumed;
         }
     }
 
@@ -29,9 +34,25 @@ public class TriggerWalk : MonoBehaviour
     {
         OVRManager ovrManager = other.GetComponent<OVRManager>();
 
-        if (ovrManager != null && canWalk)
+        if (ovrManager != null)
+        {
+            isOvrManagerInTrigger = true;
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            isObstacleInTrigger = true;
+        }
+
+        if (canWalk && isOvrManagerInTrigger && !isObstacleInTrigger)
         {
             playerAnimator.SetBool("IsWalking", true);
+            moveCharacter.Resume();
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
+            moveCharacter.Pause();
         }
     }
 
@@ -41,12 +62,32 @@ public class TriggerWalk : MonoBehaviour
 
         if (ovrManager != null)
         {
+            isOvrManagerInTrigger = false;
             playerAnimator.SetBool("IsWalking", false);
-            Debug.Log("Stopped walking");
+            moveCharacter.Pause();
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            isObstacleInTrigger = false;
+
+            if (isOvrManagerInTrigger && canWalk)
+            {
+                moveCharacter.Resume();
+            }
         }
     }
 
-    // This method will be called when the character reaches the end of the destinations
+    private void OnPaused()
+    {
+        Debug.Log("Paused");
+    }
+
+    private void OnResumed()
+    {
+        Debug.Log("Resumed");
+    }
+
     private void OnReachedEnd()
     {
         playerAnimator.SetBool("IsWalking", false);
