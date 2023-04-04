@@ -6,6 +6,7 @@ public class TriggerWalk : MonoBehaviour
 {
     private Animator playerAnimator;
     private MoveCharacter moveCharacter;
+    private ColorChanger colorChanger;
 
     private bool canWalk = true;
     private bool isOvrManagerInTrigger = false;
@@ -15,6 +16,7 @@ public class TriggerWalk : MonoBehaviour
     {
         playerAnimator = GetComponent<Animator>();
         moveCharacter = GetComponent<MoveCharacter>();
+        colorChanger = GetComponent<ColorChanger>();
         moveCharacter.OnReachedEnd += OnReachedEnd;
         moveCharacter.OnPaused += OnPaused;
         moveCharacter.OnResumed += OnResumed;
@@ -42,6 +44,7 @@ public class TriggerWalk : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             isObstacleInTrigger = true;
+            colorChanger.ChangeToAlertColor();
         }
 
         if (canWalk && isOvrManagerInTrigger && !isObstacleInTrigger)
@@ -53,6 +56,7 @@ public class TriggerWalk : MonoBehaviour
         {
             playerAnimator.SetBool("IsWalking", false);
             moveCharacter.Pause();
+            
         }
     }
 
@@ -70,6 +74,7 @@ public class TriggerWalk : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             isObstacleInTrigger = false;
+            colorChanger.ChangeToOriginalColor();
 
             if (isOvrManagerInTrigger && canWalk)
             {

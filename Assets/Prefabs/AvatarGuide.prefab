@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3562843641093995256}
   - component: {fileID: 6977890618046759143}
   - component: {fileID: 5252280486281561313}
+  - component: {fileID: 9014712612238567094}
   - component: {fileID: 5064820262478474901}
   m_Layer: 0
   m_Name: AvatarGuide
@@ -111,6 +112,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9014712612238567094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386229446799806087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f03ef124a45d14aa35eb421bcdf32a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4cb4a5c1ddec23a4ea0ae436ca5c477e, type: 2}
 --- !u!114 &5064820262478474901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80760dfa839a6049b77052f392c9b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinations: []
   moveDuration: 1
   easeType: 3
+  destination: {x: 0, y: 0, z: 0}
 --- !u!1001 &7386229446464865779
 PrefabInstance:
   m_ObjectHideFlags: 0
