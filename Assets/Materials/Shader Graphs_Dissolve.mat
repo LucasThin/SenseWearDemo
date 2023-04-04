@@ -38,7 +38,7 @@ Material:
     - _Dissolve: -0.876
     - _EdgeWidth: 0.186
     - _ObjectHeight: 0.79
-    - _QueueControl: 0
+    - _QueueControl: 1
     - _QueueOffset: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.49411765, b: 1, a: 1}
