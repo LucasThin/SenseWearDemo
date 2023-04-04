@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Oculus;
+using UnityEngine.Events;
 
 public class TriggerWalk : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TriggerWalk : MonoBehaviour
     private bool canWalk = true;
     private bool isPlayerBodyInTrigger = false;
     private bool isObstacleInTrigger = false;
+
+    public UnityEvent warning;
+    public UnityEvent warningOff;
 
     private void Awake()
     {
@@ -34,7 +38,6 @@ public class TriggerWalk : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        
         CopyPositionAndYRotation PlayerBody = other.GetComponent<CopyPositionAndYRotation>();
 
         if (PlayerBody != null)
@@ -46,6 +49,7 @@ public class TriggerWalk : MonoBehaviour
         {
             isObstacleInTrigger = true;
             colorChanger.ChangeToAlertColor();
+            warning.Invoke();
         }
 
         if (canWalk && isPlayerBodyInTrigger && !isObstacleInTrigger)
@@ -57,7 +61,6 @@ public class TriggerWalk : MonoBehaviour
         {
             playerAnimator.SetBool("IsWalking", false);
             moveCharacter.Pause();
-            
         }
     }
 
@@ -76,6 +79,7 @@ public class TriggerWalk : MonoBehaviour
         {
             isObstacleInTrigger = false;
             colorChanger.ChangeToOriginalColor();
+            warningOff.Invoke();
 
             if (isPlayerBodyInTrigger && canWalk)
             {

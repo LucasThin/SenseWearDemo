@@ -10,7 +10,8 @@ public class TriggerCube : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SpawnPrefabToRight();
-            gameObject.tag = "Default";
+           // gameObject.tag = "Default";
+            Destroy(this.gameObject);
         }
     }
 
