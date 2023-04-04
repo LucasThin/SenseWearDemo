@@ -9,7 +9,7 @@ public class TriggerWalk : MonoBehaviour
     private ColorChanger colorChanger;
 
     private bool canWalk = true;
-    private bool isOvrManagerInTrigger = false;
+    private bool isPlayerBodyInTrigger = false;
     private bool isObstacleInTrigger = false;
 
     private void Awake()
@@ -34,11 +34,12 @@ public class TriggerWalk : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        OVRManager ovrManager = other.GetComponent<OVRManager>();
+        
+        CopyPositionAndYRotation PlayerBody = other.GetComponent<CopyPositionAndYRotation>();
 
-        if (ovrManager != null)
+        if (PlayerBody != null)
         {
-            isOvrManagerInTrigger = true;
+            isPlayerBodyInTrigger = true;
         }
 
         if (other.CompareTag("Obstacle"))
@@ -47,7 +48,7 @@ public class TriggerWalk : MonoBehaviour
             colorChanger.ChangeToAlertColor();
         }
 
-        if (canWalk && isOvrManagerInTrigger && !isObstacleInTrigger)
+        if (canWalk && isPlayerBodyInTrigger && !isObstacleInTrigger)
         {
             playerAnimator.SetBool("IsWalking", true);
             moveCharacter.Resume();
@@ -62,11 +63,11 @@ public class TriggerWalk : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        OVRManager ovrManager = other.GetComponent<OVRManager>();
+        CopyPositionAndYRotation PlayerBody = other.GetComponent<CopyPositionAndYRotation>();
 
-        if (ovrManager != null)
+        if (PlayerBody != null)
         {
-            isOvrManagerInTrigger = false;
+            isPlayerBodyInTrigger = false;
             playerAnimator.SetBool("IsWalking", false);
             moveCharacter.Pause();
         }
@@ -76,7 +77,7 @@ public class TriggerWalk : MonoBehaviour
             isObstacleInTrigger = false;
             colorChanger.ChangeToOriginalColor();
 
-            if (isOvrManagerInTrigger && canWalk)
+            if (isPlayerBodyInTrigger && canWalk)
             {
                 moveCharacter.Resume();
             }

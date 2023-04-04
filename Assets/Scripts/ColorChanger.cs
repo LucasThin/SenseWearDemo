@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
@@ -6,6 +7,12 @@ public class ColorChanger : MonoBehaviour
     private Color originalColor = new Color(0, 126 / 255f, 255 / 255f);
     private Color alertColor = new Color(255 / 255f, 151 / 255f, 0);
 
+
+    public void Start()
+    {
+        material.SetColor("_BaseColor", originalColor);
+        
+    }
 
     public void ChangeToAlertColor()
     {

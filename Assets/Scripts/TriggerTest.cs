@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using Oculus;
-using UnityEditor.Animations;
 
 public class TriggerTest : MonoBehaviour
 {
